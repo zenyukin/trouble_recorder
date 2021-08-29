@@ -1,0 +1,24 @@
+<div class = "wrapper-center post-new-wrapper">
+  <div class = "container" >
+    <div class = "row">
+       <div class = "col-md-offset-2 col-md-8">
+        <h1 class = "form-title text-blue">トラブル内容を作成</h1>
+          <%= form_for @post do |f|%>
+          <div class = "form-group">
+          <%= f.label :title, "トラブルの要約", class: "text-black" %>
+          <%= f.text_field :title %>
+          </div>
+          <div class = "form-group">
+          <%= f.label :content, "トラブルの詳細", class: "text-black" %>
+          <%= f.text_area :content %>
+          </div>
+          <div class = "form-group">
+          <%= f.label :image, "写真（ある場合のみでいい）" %>
+          <%= f.file_field :image %>
+          </div>
+          <%= f.submit '投稿する', class: "btn btn-blue" %>
+         <% end %>  
+       </div>
+    </div>
+  </div>
+</div>
