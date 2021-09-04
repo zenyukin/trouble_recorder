@@ -6,8 +6,11 @@ Rails.application.routes.draw do
   resources :posts
   
   get "/login", to: "sessions#new"
-  get "/login/:id/page", to: "sessions#login_user_page"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+  
+  get "/mypage", to: "users#mypage"
+  
+  resources :post_managers
   
 end

@@ -1,0 +1,2 @@
+module PostManagersHelper
+end

@@ -5,7 +5,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.text :content
       t.string :image
       t.integer :status, default: 0
-      t.integer :created_user_id
+      t.integer :user_id
 
       t.timestamps
     end

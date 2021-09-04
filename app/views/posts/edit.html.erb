@@ -10,19 +10,19 @@
           </div>
           <div class = "form-group">
           <%= f.label :content, "トラブルの詳細", class: "text-black" %>
-          <%= f.text_area :content, value: @post.content, class: "form-control" %>
+          <%= f.text_area :content, value: @post.content, class: "form-control"%>
           </div>
           <p class = "image-control">
           <% if @post.image? %>
            <%= image_tag @post.image.url %>
           <% end %>
-        </p>
-         <% end %>  
-         
-         <div class = "edit-btn-group btn_blue col-md-offset-6 col-md-2">
-           <%= link_to "編集", edit_post_path %>
-           <%= link_to "削除", "/posts/#{@post.id}", method:"delete"%>
+          </p>
+          <div class = "form-group">
+           <%= f.submit "更新する" %>
          </div> 
+          
+         <% end %>  
+
          
        </div>
     </div>
