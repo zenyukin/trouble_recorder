@@ -3,21 +3,23 @@
     <div class = "row">
        <div class = "col-md-offset-2 col-md-8">
         <h1 class = "form-title text-blue">トラブル内容を作成</h1>
+        
           <%= form_for @post do |f|%>
           <div class = "form-group">
-          <%= f.label :title, "トラブルの要約", class: "text-black" %>
-          <%= f.text_field :title, value: @post.title, class: "form-control" %>
+           <p class = "show-title">トラブルの要約</p> 
+           <div class = "form-control"><%= @post.title %></div>
           </div>
           <div class = "form-group">
-          <%= f.label :content, "トラブルの詳細", class: "text-black" %>
-          <%= f.text_area :content, value: @post.content, class: "form-control" %>
+           <p class = "show-title">トラブルの詳細</p>
+          <div class = "form-control"><%= @post.title %></div>
           </div>
           <p class = "image-control">
           <% if @post.image? %>
            <%= image_tag @post.image.url %>
           <% end %>
-        </p>
-         <% end %>  
+          </p>
+         <% end %> 
+         <P>対応状態 <%= @post.status_i18n %> </P>
          
          <div class = "edit-btn-group btn_blue col-md-offset-6 col-md-2">
            <%= link_to "編集", edit_post_path %>
@@ -28,3 +30,6 @@
     </div>
   </div>
 </div>
+
+
+

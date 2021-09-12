@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   
   get "/mypage", to: "users#mypage"
-  
-  resources :post_managers
+ 
+  get "/postmanagers/index", to: "post_managers#index"
+  post "/postmanagers", to: "post_managers#create"
   
 end

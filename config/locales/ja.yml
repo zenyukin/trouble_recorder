@@ -1,0 +1,8 @@
+ja:
+  enums:
+    post:
+      status:
+        waiting: "対応待ち"
+        in_progress: "対応中"
+        completed: "対応済み"
+        no_action_needed: "対応不要"

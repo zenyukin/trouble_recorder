@@ -17,8 +17,13 @@
            <%= image_tag @post.image.url %>
           <% end %>
           </p>
+           <div class = "form-group">
+          <%= f.label :status, "対応状況を選択して下さい", class: "text-black" %>
+          <%= f.select :status, Post.statuses.keys.map {|k| [I18n.t("enums.post.status.#{k}"), k]}, class: "form-control" %>
+          </div>
           <div class = "form-group">
            <%= f.submit "更新する" %>
+          
          </div> 
           
          <% end %>  

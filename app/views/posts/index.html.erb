@@ -2,8 +2,8 @@
   <div class = "container">
    <% @posts.each do |post| %>
     <div class = "row post-index-row">
-      <div class = "col-md-6 col-md-offset-3">
-        <p>作成ユーザ<%= post.user_id %></p>
+      <div class = "col-md-1 col-md-offset-3">
+        <p>作成ユーザ<%= post.user.user_name %></p>
         <p>
           <%= link_to post_path(id: post.id) do %>
           <%= post.title %>
@@ -16,7 +16,7 @@
         </p>
         <p>作成時間 <%= post.created_at %></p>
         <p>最終更新時間 <%= post.updated_at %></p>
-        <P>対応状態 <%= post.status %></P>
+        <P>対応状態 <%= post.status_i18n %> </P>
       </div>
     </div>
     <% end %>
