@@ -11,7 +11,7 @@
           </div>
           <div class = "form-group">
            <p class = "show-title">トラブルの詳細</p>
-          <div class = "form-control"><%= @post.title %></div>
+          <div class = "form-control"><%= @post.content %></div>
           </div>
           <p class = "image-control">
           <% if @post.image? %>
@@ -19,7 +19,18 @@
           <% end %>
           </p>
          <% end %> 
-         <P>対応状態 <%= @post.status_i18n %> </P>
+         
+        <div class = "form-group form-control">
+          <% if @post.status_i18n == "対応待ち" %>
+            <div style ="background-color: #FF0000"> <%= @post.status_i18n %> </div >
+          <% elsif @post.status_i18n == "対応中" %>
+            <div style ="background-color: #FFFF00"> <%= @post.status_i18n %> </div >
+          <% elsif @post.status_i18n == "対応済み" %>
+            <div style ="background-color: #006600"> <%= @post.status_i18n %> </div >
+          <% else  @post.status_i18n == "対応不要" %>
+            <div style ="background-color: #888888"> <%= @post.status_i18n %> </div >
+          <% end %>
+         </div> 
          
          <div class = "edit-btn-group btn_blue col-md-offset-6 col-md-2">
            <%= link_to "編集", edit_post_path %>
